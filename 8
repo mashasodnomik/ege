@@ -19,3 +19,25 @@ for x in p:
   if x.count('К') == 1:
     n += 1
 print(n)
+
+from itertools import permutations
+words = set()
+s = 'капкан'
+for p in permutations(s):    
+  w = ''.join(p)    
+  if w.count('аа') == 0 and w.count('кк') == 0:       
+    words.add(w)
+print(len(words))
+
+from itertools import product 
+p = product('ВУАЛЬ',repeat=5)
+s = map(lambda x: ''.join(x), p)
+n = 0
+for x in s:
+   if ((x.count('В')==1) and (x.count('У')==1) and    
+       (x.count('А')==1) and (x.count('Л')==1) and 
+       (x.count('Ь')==1)) and 
+       (x[0] != 'Ь') and (x.find('ЬУ')==-1 and 
+        x.find('ЬА')==-1):
+        n += 1
+print(n)
