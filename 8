@@ -1,0 +1,21 @@
+n=0
+s='школа'
+for a in s:
+  for b in s:
+    for c in s:
+        if (a+b+c).count('к')==1:
+          n+=1
+print(n)
+
+from itertools import product
+p=[x for x in product('ШКОЛА',repeat=3) 
+     if x.count('К')==1 ]
+print(len(p))
+
+from itertools import product
+p = product('ШКОЛА', repeat=3)
+n = 0
+for x in p:
+  if x.count('К') == 1:
+    n += 1
+print(n)
